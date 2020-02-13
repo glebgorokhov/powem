@@ -1,0 +1,40 @@
+.video {
+  display: block;
+  height: 0;
+  padding-bottom: 70%;
+  position: relative;
+  overflow: hidden;
+
+  &:not(:first-child) {
+    margin-top: 40px;
+  }
+
+  $b: &;
+
+  &__preview {
+    @include fill-img;
+  }
+
+  &__button {
+    width: 65px;
+    height: 65px;
+    background: $color-main;
+    transition: background $ease-main;
+    z-index: 2;
+
+    @include center-image;
+
+    #{$b}:hover & {
+      background: $color-main-dark;
+    }
+
+    svg {
+      width: 14px;
+      height: 14px;
+      stroke: white;
+      fill: transparent;
+
+      @include center-image;
+    }
+  }
+}

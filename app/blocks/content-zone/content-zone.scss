@@ -1,4 +1,7 @@
 .content-zone {
+  font-size: 17px;
+  line-height: (34/17);
+
   $b: &;
 
   h1, h2, h3, h4, h5, h6 {
@@ -18,51 +21,61 @@
   }
 
   p {
-    font-size: 16px;
-    line-height: 1.5;
-
     &:not(:first-child) {
-      margin-top: 10px;
-    }
-
-    small {
-      display: block;
-      font-size: 12px;
+      margin-top: 40px;
     }
   }
 
   a {
     color: $color-main;
-    text-decoration: underline;
+    position: relative;
+    padding-right: 16px;
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 6px;
+      height: 10px;
+      top: 2px;
+      bottom: 0;
+      margin: auto;
+      right: 0;
+      background: url('../images/arrow_right.svg');
+      background-size: 100% 100%;
+    }
 
     &:hover {
-      text-decoration: none;
+      text-decoration: underline;
     }
   }
 
   blockquote {
-    padding-left: 40px;
-    border-left: 2px solid black;
+    border-width: 1px 0;
+    border-style: solid;
+    border-color: $color-gray-5;
+    padding: 48px 0;
+    text-align: center;
     display: block;
+    font-size: 19px;
+    line-height: (33/19);
+    font-weight: 900;
 
     &:not(:first-child) {
-      margin-top: 30px;
+      margin-top: 40px;
     }
 
     &:not(:last-child) {
-      margin-bottom: 30px;
+      margin-bottom: 48px;
     }
   }
 
   img {
-    max-width: 100%;
+    width: 327px;
+    float: left;
+    margin: 10px 31px 31px 0;
 
-    &:not(:first-child) {
-      margin-top: 30px;
-    }
-
-    &:not(:last-child) {
-      margin-bottom: 30px;
+    & + p {
+      margin-top: -5px;
     }
   }
 

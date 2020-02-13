@@ -15,6 +15,7 @@ import accordion from '../blocks/accordion/accordion';
 import '../blocks/rating/rating';
 import '../blocks/dropdown/dropdown';
 import putBlockIntoSlot from '../blocks/js-functions/put-block-into-slot';
+import {header} from "../components/header/header";
 
 const $ = window.$;
 
@@ -36,5 +37,6 @@ $(() => {
   scrollAnimation();
   accordion();
   putBlockIntoSlot();
+  header();
 });
 /* eslint-enable */

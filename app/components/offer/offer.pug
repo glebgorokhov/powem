@@ -1,0 +1,18 @@
+mixin offer()
+  +b.offer&attributes(attributes)
+    .container
+      +e.H1.title Газовые турбины<br> средней и&nbsp;большой мощности
+
+mixin ui-kit-offer()
+  +ui-section
+    +ui-section-head
+      +ui-title Главный экран
+      +ui-path
+        p Компонент: components/offer/offer
+
+    +ui-section-content(true)
+      +offer
+
+    //- При +ui-section-content(true) контейнер отсутствует
+    //- Для перечисления инлайновых блоков используется миксин +ui-elements-list()
+    //- Рамка вокруг особой секции: +ui-special()

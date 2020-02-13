@@ -1,0 +1,25 @@
+mixin two-columns()
+  .two-columns&attributes(attributes)
+    block
+
+mixin two-columns-left()
+  .two-columns__left&attributes(attributes)
+    block
+
+mixin two-columns-right()
+  .two-columns__right&attributes(attributes)
+    block
+
+mixin ui-kit-two-columns()
+  +ui-section
+    +ui-section-head
+      +ui-title Двухколоночная сетка
+      +ui-path
+        p Компонент: components/two-columns/two-columns
+
+    +ui-section-content()
+      +two-columns
+
+    //- При +ui-section-content(true) контейнер отсутствует
+    //- Для перечисления инлайновых блоков используется миксин +ui-elements-list()
+    //- Рамка вокруг особой секции: +ui-special()

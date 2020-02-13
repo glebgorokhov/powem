@@ -1,0 +1,14 @@
+.two-columns {
+  display: flex;
+
+  $b: &;
+
+  &__left {
+    flex: 1;
+  }
+
+  &__right {
+    margin-left: 67px;
+    width: 370px;
+  }
+}

@@ -1,0 +1,77 @@
+.footer {
+  display: block;
+  margin-top: 100px;
+  padding: 0 0 30px;
+
+  $b: &;
+
+  &__top, &__bottom {
+    margin-left: -50px;
+    margin-right: -50px;
+  }
+
+  &__top {
+    border-width: 1px 0;
+    border-style: solid;
+    border-top-color: $color-gray-5;
+    border-bottom-color: $color-basic;
+    padding: 29px 0;
+  }
+
+  &__menu {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__link {
+    font-size: 16px;
+    line-height: 19px;
+    transition: color $ease-main;
+
+    &:hover {
+      color: $color-main;
+    }
+
+    &:not(:first-child) {
+      margin-left: 90px;
+    }
+  }
+
+  &__bottom {
+    margin-top: 49px;
+    display: flex;
+    align-items: center;
+    height: 90px;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  &__logo {
+    font-size: 0;
+    width: 90px;
+    height: 90px;
+    transition: opacity $ease-main;
+
+    @include center-image;
+
+    &:hover {
+      opacity: .5;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &__button {
+    margin-right: 72px;
+  }
+
+  &__copyright {
+    color: $color-gray-3;
+    font-size: 13px;
+    line-height: 25px;
+    text-align: center;
+    margin-top: 33px;
+  }
+}

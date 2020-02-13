@@ -1,0 +1,33 @@
+.socials {
+  display: flex;
+  align-items: center;
+
+  $b: &;
+
+  &__link {
+    width: 56px;
+    height: 56px;
+    border-radius: 100%;
+    box-sizing: border-box;
+    border: 1px solid $color-gray-6;
+    position: relative;
+    fill: $color-basic;
+    transition: fill $ease-main, transform $ease-main;
+
+    &:hover {
+      fill: $color-main;
+      transform: translate3d(0, -12px, 0);
+    }
+
+    &:not(:first-child) {
+      margin-left: 24px;
+    }
+
+    svg {
+      width: 16px;
+      height: 12px;
+
+      @include center-image;
+    }
+  }
+}

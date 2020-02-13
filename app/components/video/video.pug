@@ -1,0 +1,19 @@
+mixin video()
+  +b.A.video(href="#").js-fancybox&attributes(attributes)
+    +e.button
+      +icon('play')
+    +e.IMG.preview(src="assets/images/video_preview.jpg")
+
+mixin ui-kit-video()
+  +ui-section
+    +ui-section-head
+      +ui-title Видео
+      +ui-path
+        p Компонент: components/video/video
+
+    +ui-section-content()
+      +video
+
+    //- При +ui-section-content(true) контейнер отсутствует
+    //- Для перечисления инлайновых блоков используется миксин +ui-elements-list()
+    //- Рамка вокруг особой секции: +ui-special()

@@ -18,3 +18,10 @@
 800 — Extra Bold, Ultra Bold
 900 — Black, Heavy
 */
+
+@include font-face('Roboto', normal, 100, 'RobotoThin');
+@include font-face('Roboto', normal, 300, 'RobotoLight');
+@include font-face('Roboto', normal, 400, 'RobotoRegular');
+@include font-face('Roboto', normal, 500, 'RobotoMedium');
+@include font-face('Roboto', normal, 700, 'RobotoBold');
+@include font-face('Roboto', normal, 900, 'RobotoBlack');
