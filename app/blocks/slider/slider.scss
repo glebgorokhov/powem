@@ -2,85 +2,90 @@
 
 .slider {
   position: relative;
+  overflow: visible;
+
+  &:not(:first-child) {
+    margin-top: 80px;
+  }
 
   &__slide {
-    padding: 100px 80px;
-    box-sizing: border-box;
+    width: 624px !important;
     text-align: center;
-    border: 1px solid $ui-kit-color-gray;
+    transition: opacity $ease-main;
+    opacity: .4;
+
+    &.swiper-slide-active {
+      opacity: 1;
+    }
   }
 
-  &__dots {
-    position: absolute;
-    bottom: 20px;
-    left: 0;
-    right: 0;
-    padding: 0 20px;
-    text-align: center;
-    pointer-events: none;
-    box-sizing: border-box;
-    z-index: 2;
-  }
-
-  &__dot {
-    margin: 5px;
-    width: 10px;
-    height: 10px;
-    border: 1px solid $color-border;
-    border-radius: 50%;
-    display: inline-block;
+  &__image {
+    width: 100%;
+    height: 0;
+    padding-bottom: 57%;
+    overflow: hidden;
     position: relative;
-    transition: border-color $ease-main, background-color $ease-main;
-    pointer-events: all;
-    cursor: pointer;
 
-    &.is-active {
-      background-color: $color-main;
-      border-color: $color-main;
+    img {
+      @include fill-img;
     }
   }
 
   &__navigation {
     position: absolute;
-    top: 0;
-    bottom: 0;
+    top: 145px;
     left: 0;
     right: 0;
     margin: auto;
-    height: 40px;
+    height: 65px;
     display: flex;
     justify-content: space-between;
-    padding: 0 20px;
     box-sizing: border-box;
+    pointer-events: none;
   }
 
   &__button {
-    width: 40px;
-    height: 40px;
-    line-height: 38px;
-    border: 1px solid $ui-kit-color-gray;
-    transition: opacity $ease-main;
+    width: 65px;
+    height: 65px;
+    transition: background-color $ease-main, fill $ease-main;
     cursor: pointer;
     background-color: white;
+    fill: $color-basic;
     position: relative;
-    text-align: center;
-    font-size: 20px;
     z-index: 1;
+    pointer-events: all;
 
-    &:hover { opacity: .5; }
+    svg {
+      @include center-image;
 
-    &_next {
+      width: 6px;
+      height: 10px;
+    }
 
-      &::before {
-        content: '→';
-      }
+    &:hover {
+      background-color: $color-basic;
+      fill: white;
     }
 
     &_prev {
 
-      &::before {
-        content: '←';
+      svg {
+        transform: rotate(180deg);
       }
+    }
+  }
+
+  &__caption {
+    margin-top: 22px;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 30px;
+    color: black;
+    transition: opacity $ease-main;
+    opacity: 0;
+
+    .swiper-slide-active & {
+      opacity: 1;
     }
   }
 }

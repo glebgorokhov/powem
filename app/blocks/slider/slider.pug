@@ -1,16 +1,18 @@
-mixin slider(pagination, buttons)
+mixin slider()
   +b.slider&attributes(attributes).swiper-container.js-slider
     .swiper-wrapper
-      block
+      each item in getData('slider')
+        +e.slide.swiper-slide
+          +e.image
+            img(src=item.image)
+          +e.P.caption!= item.text
 
-    if pagination
-      +e.dots
-        +e.dot
+    +e.navigation
+      +e.button._prev
+        +icon('arrow')
 
-    if buttons
-      +e.navigation
-        +e.button._prev
-        +e.button._next
+      +e.button._next
+        +icon('arrow')
 
 mixin slide()
   +e.slide&attributes(attributes).swiper-slide
@@ -27,11 +29,7 @@ mixin ui-kit-slider
           a(href="https://idangero.us/swiper/api/" target="_blank") Документация
 
     +ui-section-content()
-      +slider(true, true)
-        +slide Привет
-        +slide Привет
-        +slide Привет
-        +slide Привет
+      +slider
 
     //- При +ui-section-content(true) контейнер отсутствует
     //- Для перечисления инлайновых блоков используется миксин +ui-elements-list()

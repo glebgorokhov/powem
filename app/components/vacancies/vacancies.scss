@@ -1,0 +1,38 @@
+.vacancies {
+  display: block;
+  padding: 70px 100px 82px;
+  margin: 0 -100px;
+  border: 1px solid rgba(1, 138, 166, .34);
+
+  $b: &;
+
+  &__title {
+    font-weight: 300;
+    font-size: 41px;
+    line-height: 1.2;
+  }
+
+  &__text {
+    font-size: 22px;
+    line-height: (43/22);
+
+    a {
+      color: $color-blue;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    &:not(:first-child) {
+      margin-top: 30px;
+    }
+  }
+
+  &__button {
+
+    &:not(:first-child) {
+      margin-top: 100px;
+    }
+  }
+}

@@ -1,0 +1,30 @@
+mixin contacts()
+  +b.contacts&attributes(attributes)
+    +e.left
+      +e.H2.title Контакты
+      +e.P.subtitle Специальное конструкторскою бюро газотурбинных установок
+      +e.contacts
+        p Тел. +7 (812) 346 70 37
+        p E-mail <a href="mailto:mail@power-m.ru">mail@power-m.ru</a>
+
+    +e.right
+      +e.P.subtitle Контакты HR
+      +e.contacts
+        p Тел. +7 (812) 346 70 37
+        p E-mail <a href="mailto:mail@power-m.ru">mail@power-m.ru</a>
+
+mixin ui-kit-contacts()
+  +ui-section
+    +ui-section-head
+      +ui-title Компонент contacts
+      +ui-path
+        p Компонент: components/contacts/contacts
+      +ui-description
+        p Описание компонента
+
+    +ui-section-content()
+      +contacts
+
+    //- При +ui-section-content(true) контейнер отсутствует
+    //- Для перечисления инлайновых блоков используется миксин +ui-elements-list()
+    //- Рамка вокруг особой секции: +ui-special()

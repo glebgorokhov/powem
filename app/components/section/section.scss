@@ -22,6 +22,7 @@
   }
 
   &__content {
+
     &:not(:first-child) {
       margin-top: 40px;
     }
@@ -30,5 +31,12 @@
   &__description {
     font-size: 20px;
     line-height: 2;
+
+    &_width {
+
+      &_1170 {
+        max-width: 1170px;
+      }
+    }
   }
 }

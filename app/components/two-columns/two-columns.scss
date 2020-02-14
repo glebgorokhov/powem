@@ -3,6 +3,10 @@
 
   $b: &;
 
+  &:not(:first-child) {
+    margin-top: 40px;
+  }
+
   &__left {
     flex: 1;
   }
@@ -10,5 +14,11 @@
   &__right {
     margin-left: 67px;
     width: 370px;
+
+    #{$b}_equal & {
+      margin-left: 79px;
+      width: auto;
+      flex: 1;
+    }
   }
 }

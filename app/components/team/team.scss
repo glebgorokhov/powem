@@ -23,6 +23,7 @@
   }
 
   &__content {
+
     &:not(:first-child) {
       margin-top: 23px;
     }
@@ -45,6 +46,7 @@
     }
 
     p {
+
       &:not(:first-child) {
         margin-top: 10px;
       }
