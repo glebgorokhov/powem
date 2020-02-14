@@ -172,7 +172,7 @@
         "smallImage": {
           "src": "assets/images/objects/2/small_1.jpg",
           "linkClass": "js-fancybox",
-          "link": "assets/images/objects/2/3.jpg"
+          "link": "assets/images/objects/2/4.jpg"
         }
       },
       {
@@ -325,7 +325,7 @@
         "smallImage": {
           "src": "assets/images/objects/2/small_1.jpg",
           "linkClass": "js-fancybox",
-          "link": "assets/images/objects/2/3.jpg"
+          "link": "assets/images/objects/2/4.jpg"
         }
       },
       {
@@ -346,7 +346,7 @@
         "smallImage": {
           "src": "assets/images/objects/2/small_2.jpg",
           "linkClass": "js-fancybox",
-          "link": "assets/images/objects/2/4.jpg"
+          "link": "assets/images/objects/2/3.jpg"
         }
       }
     ]
