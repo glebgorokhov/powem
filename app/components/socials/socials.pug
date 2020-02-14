@@ -1,7 +1,7 @@
 mixin socials()
   +b.socials&attributes(attributes)
     each item in getData('socials')
-      +e.A.link(href=item.link)
+      +e.A.link(href=item.link, target="_blank")
         +icon(item.icon)
 
 mixin ui-kit-socials()
