@@ -45,6 +45,14 @@
       margin-top: 14px;
     }
 
+    a {
+      color: $color-blue;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
     p {
 
       &:not(:first-child) {
