@@ -1,28 +1,28 @@
 .tabs {
-  $tab-gap: 25px;
-
-  display: block;
+  display: flex;
   font-size: 0;
-  margin-top: -$tab-gap;
+  border-bottom: 1px solid rgba(130, 130, 130, .69);
 
   &__tab {
-    display: inline-block;
-    margin-right: $tab-gap;
-    margin-top: $tab-gap;
     border-bottom: 2px solid transparent;
-    transition: border-color $ease-main, opacity $ease-main;
-    padding-bottom: 10px;
+    transition: border-color $ease-main;
     cursor: pointer;
-    opacity: .5;
-    font-size: 14px;
+    font-size: 15px;
+    line-height: 28px;
+    margin-bottom: -2px;
+    padding: 0 0 18px;
 
-    &.active {
-      border-color: $color-basic;
-      opacity: 1;
+    &:not(:first-child) {
+      margin-left: 73px;
+    }
+
+    &.is-active {
+      border-color: $color-main;
+      font-weight: 500;
     }
   }
 
-  & + &-content { margin-top: 30px; }
+  & + &-content { margin-top: 75px; }
 
   &-content {
 
@@ -32,7 +32,7 @@
       transition: opacity $ease-main, transform $ease-main;
       transform: translate3d(0, 10px, 0);
 
-      &.active {
+      &.is-active {
         display: block;
         opacity: 1;
         transform: translate3d(0, 0, 0);

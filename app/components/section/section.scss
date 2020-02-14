@@ -2,11 +2,20 @@
   display: block;
 
   &:not(:first-child) {
-    margin-top: 100px;
+    margin-top: 81px;
   }
 
-  &_dark + &_dark {
-    margin-top: 0;
+  &_dark {
+    background: $color-dark-3;
+    padding: 75px 0;
+
+    &_blue {
+      background: $color-blue-dark;
+    }
+
+    & + & {
+      margin-top: 0;
+    }
   }
 
   $b: &;
@@ -24,13 +33,17 @@
   &__content {
 
     &:not(:first-child) {
-      margin-top: 40px;
+      margin-top: 38px;
     }
   }
 
   &__description {
     font-size: 20px;
-    line-height: 2;
+    line-height: 1.99;
+
+    &_about + .content-zone {
+      margin-top: 33px;
+    }
 
     &_width {
 

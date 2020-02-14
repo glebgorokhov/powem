@@ -4,7 +4,7 @@
   $b: &;
 
   &:not(:first-child) {
-    margin-top: 40px;
+    margin-top: 60px;
   }
 
   &__left {
@@ -14,6 +14,7 @@
   &__right {
     margin-left: 67px;
     width: 370px;
+    padding-top: 39px;
 
     #{$b}_equal & {
       margin-left: 79px;

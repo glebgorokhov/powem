@@ -18,6 +18,7 @@ export function slider() {
       centeredSlides: true,
       roundLengths: true,
       freeMode: false,
+      simulateTouch: false,
       navigation: {
         nextEl: block.find('.slider__button_next'),
         prevEl: block.find('.slider__button_prev'),

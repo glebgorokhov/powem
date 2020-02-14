@@ -17,7 +17,7 @@
 }
 
 .popup {
-  padding: 150px 0;
+  padding: 120px 0;
   width: 100%;
   min-height: 100%;
 
@@ -50,6 +50,10 @@
   fill: $color-basic;
   stroke: $color-basic;
   transition: fill $ease-main, stroke $ease-main, border $ease-main, background-color $ease-main;
+
+  &--zoom {
+    display: none !important;
+  }
 
   .fancybox_style_dark & {
     border-color: $color-dark-2;

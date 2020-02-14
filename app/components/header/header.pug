@@ -1,12 +1,12 @@
 mixin header()
   +b.header&attributes(attributes)
     .container
-      +e.A.logo(href="#")
+      +e.A.logo(href="http://www.power-m.ru/" target="_blank")
         img(src="assets/images/logo.svg")
 
       +e.menu
         each item in getData('header').menu
-          +e.A.link(href=item.link)!= item.text
+          +e.A.link(href=item.link).js-anchor!= item.text
 
 
 mixin ui-kit-header()

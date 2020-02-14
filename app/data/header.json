@@ -1,31 +1,31 @@
 {
   "menu": [
     {
-      "link": "#",
+      "link": "#about",
       "text": "О проекте"
     },
     {
-      "link": "#",
+      "link": "#objectOne",
       "text": "ГТЭ-65"
     },
     {
-      "link": "#",
+      "link": "#objectTwo",
       "text": "ГТЭ-170"
     },
     {
-      "link": "#",
+      "link": "#manufacturing",
       "text": "Производство"
     },
     {
-      "link": "#",
+      "link": "#team",
       "text": "Команда"
     },
     {
-      "link": "#",
+      "link": "#vacancies",
       "text": "Вакансии"
     },
     {
-      "link": "#",
+      "link": "#contacts",
       "text": "Контакты"
     }
   ]

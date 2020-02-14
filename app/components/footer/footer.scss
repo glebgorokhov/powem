@@ -6,8 +6,8 @@
   $b: &;
 
   &__top, &__bottom {
-    margin-left: -100px;
-    margin-right: -100px;
+    @include rule(margin-left, (xl: -100px, lg: 0));
+    @include rule(margin-right, (xl: -100px, lg: 0));
   }
 
   &__top {
@@ -15,7 +15,7 @@
     border-style: solid;
     border-top-color: $color-gray-5;
     border-bottom-color: $color-basic;
-    padding: 29px 0;
+    padding: 26px 0;
   }
 
   &__menu {
@@ -64,7 +64,7 @@
   }
 
   &__button {
-    margin-right: 72px;
+    @include rule(margin-right, (xl: 72px, lg: 0));
   }
 
   &__copyright {

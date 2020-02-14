@@ -1,18 +1,20 @@
 .contacts {
   display: flex;
-  margin: 0 -100px;
   background: $color-blue;
-  align-items: flex-end;
+  margin: 0 -100px;
 
   $b: &;
 
   &__left {
     background: $color-grey-3;
-    padding: 90px 100px;
+    padding: 80px 100px 105px;
   }
 
   &__right {
-    padding: 90px 140px;
+    box-sizing: border-box;
+    width: 583px;
+    flex-shrink: 0;
+    padding: 184px 140px 105px;
     color: white;
   }
 
@@ -20,16 +22,20 @@
     font-weight: 300;
     font-size: 41px;
     line-height: 1.2;
+    margin-bottom: 55px;
+  }
+
+  &__group {
+
+    & + & {
+      margin-top: 70px;
+    }
   }
 
   &__subtitle {
     font-weight: bold;
     font-size: 22px;
     line-height: 1.2;
-
-    &:not(:first-child) {
-      margin-top: 50px;
-    }
   }
 
   &__contacts {
@@ -52,13 +58,13 @@
     }
 
     &:not(:first-child) {
-      margin-top: 60px;
+      margin-top: 52px;
     }
 
     p {
 
       &:not(:first-child) {
-        margin-top: 30px;
+        margin-top: 26px;
       }
     }
   }

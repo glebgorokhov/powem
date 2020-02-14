@@ -4,11 +4,11 @@ mixin footer()
       +e.top
         +e.menu
           each item in getData('footer').menu
-            +e.A.link(href=item.link)!= item.text
+            +e.A.link(href=item.link).js-anchor!= item.text
 
       +e.bottom
         +socials.__socials
-        +e.A.logo(href="#")
+        +e.A.logo(href="http://www.power-m.ru/" target="_blank")
           img(src="assets/images/logo.svg")
         +scroll-top.footer__button
 

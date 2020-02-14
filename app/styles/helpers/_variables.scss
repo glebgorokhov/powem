@@ -11,8 +11,8 @@ $grid-gap: 30px; // Расстояние между колонками
 $grid-gap-vertical: 30px; // Расстояние между строками в сетке
 $breakpoints: (
   'xl': 1920px,
-  'lg': 1280px,
-  'md': 1024px,
+  'lg': 1500px,
+  'md': 1280px,
   'sm': 768px,
   'xs': 480px
 );
@@ -32,11 +32,14 @@ $color-gray-5: #e0e0e0;
 $color-gray-6: #f2f2f2;
 
 $color-main-dark: #00768e;
+$color-blue-dark: #055378;
 $color-grey-1: #f9f9f9;
 $color-grey-2: #c4c4c4;
 $color-grey-3: #f5f5f5;
+$color-grey-4: #e0e0e0;
 $color-dark-1: #212121;
 $color-dark-2: #4f4f4f;
+$color-dark-3: #212526;
 
 // ##########
 // Массив цветов для UI-кита

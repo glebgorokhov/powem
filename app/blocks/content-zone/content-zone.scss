@@ -7,11 +7,11 @@
   h1, h2, h3, h4, h5, h6 {
 
     &:not(:first-child) {
-      margin-top: 40px;
+      margin-top: 38px;
     }
 
     &:not(:last-child) {
-      margin-bottom: 40px;
+      margin-bottom: 38px;
     }
   }
 
@@ -24,7 +24,7 @@
   p {
 
     &:not(:first-child) {
-      margin-top: 40px;
+      margin-top: 34px;
     }
   }
 
@@ -83,10 +83,10 @@
   img {
     width: 327px;
     float: left;
-    margin: 10px 31px 31px 0;
+    margin: 0 31px 22px 0;
 
     & + p {
-      margin-top: -5px;
+      margin-top: 0 !important;
     }
   }
 
@@ -100,11 +100,11 @@
   ul, ol {
 
     &:not(:first-child) {
-      margin-top: 40px;
+      margin-top: 48px;
     }
 
     &:not(:last-child) {
-      margin-bottom: 40px;
+      margin-bottom: 48px;
     }
 
     li {
@@ -112,7 +112,7 @@
       position: relative;
 
       &:not(:first-child) {
-        margin-top: 30px;
+        margin-top: 38px;
       }
     }
   }
@@ -207,6 +207,50 @@
 
       &:not(:last-child) {
         margin-bottom: 40px;
+      }
+    }
+  }
+
+  &_object {
+
+    h3 {
+      font-size: 22px;
+      line-height: 36px;
+      font-weight: 400;
+
+      &:not(:first-child) {
+        margin-top: 40px;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 40px;
+      }
+    }
+  }
+
+  &_dark {
+    color: rgba(white, .8);
+
+    h1, h2, h3, h4, h5, h6, ul {
+      color: white;
+    }
+
+    ul, ol {
+
+      li {
+        padding-left: 40px;
+      }
+    }
+
+    ul {
+
+      li {
+
+        &::before {
+          width: 4px;
+          height: 3px;
+          border-radius: 0;
+        }
       }
     }
   }
