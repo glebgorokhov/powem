@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimal-ui">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Силовые машины | UI-кит</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicons/site.webmanifest">
+    <link rel="mask-icon" href="assets/favicons/safari-pinned-tab.svg" color="#018aa6">
+    <link rel="shortcut icon" href="assets/favicons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#018aa6">
+    <meta name="msapplication-config" content="assets/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#018aa6">
+    <link href="assets/styles/app.min.css" rel="stylesheet">
+    <script src="assets/scripts/libs/jquery.min.js"></script>
+</head>
+
+<body>
+    <script>
+        $(window).on('load', function() {
+            $('.ui-kit__section').each(function(i) {
+                var id = 'section' + i;
+                var name = $(this).find('.ui-kit__section-head h2').text();
+                var li = $('<li></li>');
+                var a = $('<a></a>');
+
+                a.attr('href', '#' + id).text(name).addClass('js-anchor');
+                li.append(a);
+
+                $('.ui-kit__navigation__list').append(li);
+                $(this).attr('id', id);
+            });
+        });
+    </script>
+    <div class="ui-kit">
+        <div class="ui-kit__navigation">
+            <ul class="ui-kit__navigation__list"></ul>
+        </div>
+        <section class="ui-kit__head">
+            <div class="container"><img class="ui-kit__logo" src="assets/images/logo.svg" alt="Логотип проекта" title="" />
+                <div class="ui-kit__name">Силовые машины</div>
+            </div>
+        </section>
+        <section class="ui-kit__section ui-kit__section_grid">
+            <div class="ui-kit__section-head">
+                <div class="container">
+                    <h2 class="ui-kit__title">Сетка</h2>
+                    <div class="ui-kit__description">
+                        <p>Колонок: 12 ($grid-cols)</p>
+                        <p>Переменные: styles/helpers/_variables.scss</p>
+                        <p>Блок: blocks/grid/</p>
+                        <div class="ui-kit__special">
+                            <p>Возможные варианты использования</p>
+                            <p>
+                                <pre>+col(12) аналогично +col({ xl: 12 })</pre>
+                            </p>
+                            <p>
+                                <pre>+col({ xl: 8, lg: 6: md: 5, sm: 7, xs: 12 })</pre>
+                            </p>
+                            <p>Промежуточные брейкпоинты указывать не обязательно</p>
+                            <p>При следующей записи - блок будет занимать 6 колонок на всех разрешениях, а на самом маленьком (xs) — 12</p>
+                            <p>
+                                <pre>+col({ xl: 6, xs: 12 })</pre>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ui-kit__section-content">
+                <div class="container">
+                    <div class="grid">
+                        <div class="grid__col grid__col_xl_1"></div>
+                        <div class="grid__col grid__col_xl_1"></div>
+                        <div class="grid__col grid__col_xl_1"></div>
+                        <div class="grid__col grid__col_xl_1"></div>
+                        <div class="grid__col grid__col_xl_1"></div>
+                        <div class="grid__col grid__col_xl_1"></div>
+                        <div class="grid__col grid__col_xl_1"></div>
+                        <div class="grid__col grid__col_xl_1"></div>
+                        <div class="grid__col grid__col_xl_1"></div>
+                        <div class="grid__col grid__col_xl_1"></div>
+                        <div class="grid__col grid__col_xl_1"></div>
+                        <div class="grid__col grid__col_xl_1"></div>
+                        <div class="grid__col grid__col_xl_4"></div>
+                        <div class="grid__col grid__col_xl_4"></div>
+                        <div class="grid__col grid__col_xl_4"></div>
+                        <div class="grid__col grid__col_xl_6"></div>
+                        <div class="grid__col grid__col_xl_6"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="ui-kit__section">
+            <div class="ui-kit__section-head">
+                <div class="container">
+                    <h2 class="ui-kit__title">Шрифты</h2>
+                    <div class="ui-kit__blockpath">
+                        <p>Переменные находятся в файле styles/helpers/_variables.scss</p>
+                        <p>Шрифты подключены в styles/helpers/_fonts.scss</p>
+                    </div>
+                    <div class="ui-kit__description">
+                        <p>Основной шрифт: Roboto ($font-main), font-weight: 100, 300, 400, 500, 700, 900</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="ui-kit__section">
+            <div class="ui-kit__section-head">
+                <div class="container">
+                    <h2 class="ui-kit__title">Цвета сайта</h2>
+                    <div class="ui-kit__blockpath">Переменные находятся в файле styles/helpers/_variables.scss</div>
+                </div>
+            </div>
+            <div class="ui-kit__section-content">
+                <div class="container">
+                    <div class="ui-kit__elements-list">
+                        <div class="ui-kit__color ui-kit__color_color"></div>
+                        <div class="ui-kit__color ui-kit__color_color"></div>
+                        <div class="ui-kit__color ui-kit__color_color"></div>
+                        <div class="ui-kit__color ui-kit__color_color"></div>
+                        <div class="ui-kit__color ui-kit__color_color"></div>
+                        <div class="ui-kit__color ui-kit__color_color"></div>
+                        <div class="ui-kit__color ui-kit__color_color"></div>
+                        <div class="ui-kit__color ui-kit__color_color"></div>
+                        <div class="ui-kit__color ui-kit__color_color"></div>
+                        <div class="ui-kit__color ui-kit__color_color"></div>
+                        <div class="ui-kit__color ui-kit__color_color"></div>
+                        <div class="ui-kit__color ui-kit__color_color"></div>
+                        <div class="ui-kit__color ui-kit__color_color"></div>
+                        <div class="ui-kit__color ui-kit__color_color"></div>
+                        <div class="ui-kit__color ui-kit__color_color"></div>
+                        <div class="ui-kit__color ui-kit__color_color"></div>
+                        <div class="ui-kit__color ui-kit__color_color"></div>
+                        <div class="ui-kit__color ui-kit__color_color"></div>
+                        <div class="ui-kit__color ui-kit__color_color"></div>
+                        <div class="ui-kit__color ui-kit__color_color"></div>
+                        <div class="ui-kit__color ui-kit__color_color"></div>
+                        <div class="ui-kit__color ui-kit__color_color"></div>
+                        <div class="ui-kit__color ui-kit__color_color"></div>
+                        <div class="ui-kit__color ui-kit__color_color"></div>
+                        <div class="ui-kit__color ui-kit__color_color"></div>
+                        <div class="ui-kit__color ui-kit__color_color"></div>
+                        <div class="ui-kit__color ui-kit__color_color"></div>
+                        <div class="ui-kit__color ui-kit__color_color"></div>
+                        <div class="ui-kit__color ui-kit__color_color"></div>
+                        <div class="ui-kit__color ui-kit__color_color"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="ui-kit__section">
+            <div class="ui-kit__section-head">
+                <div class="container">
+                    <h2 class="ui-kit__title">Таблицы</h2>
+                    <div class="ui-kit__blockpath">
+                        <p>Блок: blocks/table/table</p>
+                    </div>
+                </div>
+            </div>
+            <div class="ui-kit__section-content">
+                <div class="container">
+                    <table class="table" cellspacing="0" cellpadding="0">
+                        <thead>
+                            <tr>
+                                <td>Ячейка</td>
+                                <td>Ячейка</td>
+                                <td>Ячейка</td>
+                            </tr>
+                        </thead>
+                        <tr>
+                            <td>Ячейка</td>
+                            <td>Ячейка</td>
+                            <td>Ячейка</td>
+                        </tr>
+                        <tr>
+                            <td>Ячейка</td>
+                            <td>Ячейка</td>
+                            <td>Ячейка</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </section>
+        <section class="ui-kit__section">
+            <div class="ui-kit__section-head">
+                <div class="container">
+                    <h2 class="ui-kit__title">Табы</h2>
+                    <div class="ui-kit__blockpath">
+                        <p>Блок: blocks/tabs/tabs</p>
+                    </div>
+                </div>
+            </div>
+            <div class="ui-kit__section-content">
+                <div class="container">
+                    <ul class="tabs">
+                        <li class="tabs__tab active" data-tab-target="tab1">Информация</li>
+                        <li class="tabs__tab" data-tab-target="tab2">Контент</li>
+                        <li class="tabs__tab" data-tab-target="tab3">Тексты</li>
+                    </ul>
+                    <div class="tabs-content">
+                        <div class="tabs-content__wrapper active" data-tab="tab1" data-tab-group="testtabs">
+                            <p>Это таб 1</p>
+                        </div>
+                        <div class="tabs-content__wrapper" data-tab="tab2" data-tab-group="testtabs">
+                            <p>Это таб 2</p>
+                        </div>
+                        <div class="tabs-content__wrapper" data-tab="tab3" data-tab-group="testtabs">
+                            <p>Это таб 3</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="ui-kit__section">
+            <div class="ui-kit__section-head">
+                <div class="container">
+                    <h2 class="ui-kit__title">Попапы</h2>
+                    <div class="ui-kit__blockpath">
+                        <p>Блок: blocks/popups/popups</p>
+                    </div>
+                    <div class="ui-kit__description">
+                        <p>На ссылку вешается класс .js-fancybox, в [href] указывается id попапа (href="#popup")</p>
+                        <p>Демонстрация попапов на странице <a href="sitemap.html">sitemap.html</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="ui-kit__section">
+            <div class="ui-kit__section-head">
+                <div class="container">
+                    <h2 class="ui-kit__title">Слайдер</h2>
+                    <div class="ui-kit__blockpath">
+                        <p>Блок: blocks/slider/slider</p>
+                    </div>
+                    <div class="ui-kit__description">
+                        <p><a href="https://idangero.us/swiper/api/" target="_blank">Документация</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="ui-kit__section-content">
+                <div class="container">
+                    <div class="slider swiper-container js-slider">
+                        <div class="swiper-wrapper">
+                            <div class="slider__slide swiper-slide">
+                                <div class="slider__image"><img src="assets/images/slider/1.jpg" /></div>
+                                <p class="slider__caption">Ленинградский Металлический завод «Силовых машин»</p>
+                            </div>
+                            <div class="slider__slide swiper-slide">
+                                <div class="slider__image"><img src="assets/images/slider/2.jpg" /></div>
+                                <p class="slider__caption">Ленинградский Металлический завод «Силовых машин»</p>
+                            </div>
+                            <div class="slider__slide swiper-slide">
+                                <div class="slider__image"><img src="assets/images/slider/3.jpg" /></div>
+                                <p class="slider__caption">Ленинградский Металлический завод «Силовых машин»</p>
+                            </div>
+                        </div>
+                        <div class="slider__navigation">
+                            <div class="slider__button slider__button_prev"><svg><use xlink:href="assets/images/icon.svg#icon_arrow"></use></svg></div>
+                            <div class="slider__button slider__button_next"><svg><use xlink:href="assets/images/icon.svg#icon_arrow"></use></svg></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="ui-kit__section">
+            <div class="ui-kit__section-head">
+                <div class="container">
+                    <h2 class="ui-kit__title">Кнопки</h2>
+                    <div class="ui-kit__blockpath">
+                        <p>Блок: blocks/button/button</p>
+                    </div>
+                </div>
+            </div>
+            <div class="ui-kit__section-content">
+                <div class="container">
+                    <div class="ui-kit__elements-list"><a class="button">Кнопка</a><a class="button" disabled="disabled">Отключенная кнопка</a></div>
+                </div>
+            </div>
+        </section>
+        <section class="ui-kit__section">
+            <div class="ui-kit__section-head">
+                <div class="container">
+                    <h2 class="ui-kit__title">Контентная зона</h2>
+                    <div class="ui-kit__blockpath">
+                        <p>Блок: blocks/content-zone/content-zone</p>
+                    </div>
+                    <div class="ui-kit__description">
+                        <p>Текстовая зона для WYSIWYG-редакторов</p>
+                    </div>
+                </div>
+            </div>
+            <div class="ui-kit__section-content">
+                <div class="container">
+                    <div class="ui-kit__special">
+                        <div class="content-zone">
+                            <h1>Заголовок H1 (heading-1)</h1>
+                            <h2>Заголовок H2 (heading-2)</h2>
+                            <h3>Заголовок H3 (heading-3)</h3>
+                            <h4>Заголовок H4 (heading-4)</h4>
+                            <h5>Заголовок H5 (heading-5)</h5>
+                            <h6>Заголовок H6 (heading-6)</h6>
+                            <p>Текст p (text)<br> Цитата внутри текста p: <q>Цитата q</q></p>
+                            <p><small>Тег small внутри p (text-small)</small></p>
+                            <blockquote>
+                                <p>Демонстрация цитаты через тег blockquote</p>
+                                <h4>Внутри могут быть заголовки</h4>
+                                <p>Текст с <a href="#">ссылкой в тексте</a></p>
+                            </blockquote>
+                            <p>Картинка в тексте (img):</p><img src="http://verstaburo.com/NEW/patterns/pattern.jpg" />
+                            <p>Маркированный список ul. Стили взяты из styles/helpers/_list-styles.scss</p>
+                            <ul>
+                                <li>Элемент списка</li>
+                                <li>Другой элемент<ul>
+                                        <li>Элемент списка</li>
+                                        <li>Другой элемент</li>
+                                        <li>Элемент списка</li>
+                                    </ul>
+                                </li>
+                                <li>Элемент списка</li>
+                            </ul>
+                            <p>Нумерованный список ol. Стили взяты из styles/helpers/_list-styles.scss</p>
+                            <ol>
+                                <li>Элемент списка</li>
+                                <li>Другой элемент<ol>
+                                        <li>Элемент списка</li>
+                                        <li>Другой элемент</li>
+                                        <li>Элемент списка</li>
+                                    </ol>
+                                </li>
+                                <li>Элемент списка</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="ui-kit__section">
+            <div class="ui-kit__section-head">
+                <div class="container">
+                    <h2 class="ui-kit__title">Шапка</h2>
+                    <div class="ui-kit__blockpath">
+                        <p>Компонент: components/header/header</p>
+                    </div>
+                </div>
+            </div>
+            <div class="ui-kit__section-content">
+                <div class="header" style="position: static;">
+                    <div class="container"><a class="header__logo" href="http://www.power-m.ru/" target="_blank"><img src="assets/images/logo.svg" /></a>
+                        <div class="header__menu"><a class="header__link js-anchor" href="#about">О проекте</a><a class="header__link js-anchor" href="#objectOne">ГТЭ-65</a><a class="header__link js-anchor" href="#objectTwo">ГТЭ-170</a><a class="header__link js-anchor" href="#manufacturing">Производство</a><a class="header__link js-anchor" href="#team">Команда</a><a class="header__link js-anchor" href="#vacancies">Вакансии</a><a class="header__link js-anchor" href="#contacts">Контакты</a></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="ui-kit__section">
+            <div class="ui-kit__section-head">
+                <div class="container">
+                    <h2 class="ui-kit__title">Главный экран</h2>
+                    <div class="ui-kit__blockpath">
+                        <p>Компонент: components/offer/offer</p>
+                    </div>
+                </div>
+            </div>
+            <div class="ui-kit__section-content">
+                <div class="offer">
+                    <div class="container">
+                        <h1 class="offer__title">Газовые турбины<br> средней и&nbsp;большой мощности</h1>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="ui-kit__section">
+            <div class="ui-kit__section-head">
+                <div class="container">
+                    <h2 class="ui-kit__title">Разметка секций</h2>
+                    <div class="ui-kit__blockpath">
+                        <p>Компонент: components/section/section</p>
+                    </div>
+                    <div class="ui-kit__description">
+                        <p>Описание компонента</p>
+                    </div>
+                </div>
+            </div>
+            <div class="ui-kit__section-content">
+                <div class="container">
+                    <div class="section"></div>
+                </div>
+            </div>
+        </section>
+        <section class="ui-kit__section">
+            <div class="ui-kit__section-head">
+                <div class="container">
+                    <h2 class="ui-kit__title">Двухколоночная сетка</h2>
+                    <div class="ui-kit__blockpath">
+                        <p>Компонент: components/two-columns/two-columns</p>
+                    </div>
+                </div>
+            </div>
+            <div class="ui-kit__section-content">
+                <div class="container">
+                    <div class="two-columns"></div>
+                </div>
+            </div>
+        </section>
+        <section class="ui-kit__section">
+            <div class="ui-kit__section-head">
+                <div class="container">
+                    <h2 class="ui-kit__title">Новости</h2>
+                    <div class="ui-kit__blockpath">
+                        <p>Компонент: components/news/news</p>
+                    </div>
+                </div>
+            </div>
+            <div class="ui-kit__section-content">
+                <div class="container">
+                    <div class="news"><a class="news__item" href="#" target="_blank"><span class="news__header"><span class="news__icon"><svg><use xlink:href="assets/images/icon.svg#icon_calendar"></use></svg></span>
+                                <p class="news__date">7 февраля 2020</p>
+                            </span>
+                            <p class="news__text">«Силовые машины» посетили студенты и преподаватели зарубежных университетов</p>
+                        </a><a class="news__item" href="#" target="_blank"><span class="news__header"><span class="news__icon"><svg><use xlink:href="assets/images/icon.svg#icon_calendar"></use></svg></span>
+                                <p class="news__date">7 февраля 2020</p>
+                            </span>
+                            <p class="news__text">АО «Узбекгидроэнерго» – ПАО «Силовые машины»: новый этап сотрудничества</p>
+                        </a><a class="news__item" href="#" target="_blank"><span class="news__header"><span class="news__icon"><svg><use xlink:href="assets/images/icon.svg#icon_calendar"></use></svg></span>
+                                <p class="news__date">7 февраля 2020</p>
+                            </span>
+                            <p class="news__text">«Силовые машины» посетили студенты и преподаватели зарубежных университетов</p>
+                        </a><a class="news__item" href="#" target="_blank"><span class="news__header"><span class="news__icon"><svg><use xlink:href="assets/images/icon.svg#icon_calendar"></use></svg></span>
+                                <p class="news__date">7 февраля 2020</p>
+                            </span>
+                            <p class="news__text">Интервью генерального директора ПАО "Силовые машины" Тимура Липатова газете Ведомости</p>
+                        </a></div>
+                </div>
+            </div>
+        </section>
+        <section class="ui-kit__section">
+            <div class="ui-kit__section-head">
+                <div class="container">
+                    <h2 class="ui-kit__title">Видео</h2>
+                    <div class="ui-kit__blockpath">
+                        <p>Компонент: components/video/video</p>
+                    </div>
+                </div>
+            </div>
+            <div class="ui-kit__section-content">
+                <div class="container"><a class="video js-fancybox-dark" href="https://youtu.be/EqdPqahyu-s"><span class="video__button"><svg><use xlink:href="assets/images/icon.svg#icon_play"></use></svg></span><img class="video__preview" src="assets/images/video_preview.jpg" alt="" role="presentation" /></a></div>
+            </div>
+        </section>
+        <section class="ui-kit__section">
+            <div class="ui-kit__section-head">
+                <div class="container">
+                    <h2 class="ui-kit__title">Подвал</h2>
+                    <div class="ui-kit__blockpath">
+                        <p>Компонент: components/footer/footer</p>
+                    </div>
+                </div>
+            </div>
+            <div class="ui-kit__section-content">
+                <div class="footer">
+                    <div class="container">
+                        <div class="footer__top">
+                            <div class="footer__menu"><a class="footer__link js-anchor" href="#about">О проекте</a><a class="footer__link js-anchor" href="#objectOne">ГТЭ-65</a><a class="footer__link js-anchor" href="#objectTwo">ГТЭ-170</a><a class="footer__link js-anchor" href="#manufacturing">Производство</a><a class="footer__link js-anchor" href="#team">Команда</a><a class="footer__link js-anchor" href="#vacancies">Вакансии</a><a class="footer__link js-anchor" href="#contacts">Контакты</a></div>
+                        </div>
+                        <div class="footer__bottom">
+                            <div class="socials footer__socials"><a class="socials__link" href="#"><svg><use xlink:href="assets/images/icon.svg#icon_vk"></use></svg></a><a class="socials__link" href="#"><svg><use xlink:href="assets/images/icon.svg#icon_youtube"></use></svg></a><a class="socials__link" href="#"><svg><use xlink:href="assets/images/icon.svg#icon_twitter"></use></svg></a><a class="socials__link" href="#"><svg><use xlink:href="assets/images/icon.svg#icon_facebook"></use></svg></a></div><a class="footer__logo" href="http://www.power-m.ru/" target="_blank"><img src="assets/images/logo.svg" /></a><a class="scroll-top js-anchor footer__button" href="#offer"><svg><use xlink:href="assets/images/icon.svg#icon_arrow"></use></svg></a>
+                        </div>
+                        <div class="footer__copyright">
+                            <p>© 2020, Публичное акционерное общество</p>
+                            <p>«Силовые машины – ЗТЛ, ЛМЗ, Электросила, Энергомашэкспорт» (ПАО «Силовые машины»)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="ui-kit__section">
+            <div class="ui-kit__section-head">
+                <div class="container">
+                    <h2 class="ui-kit__title">Соцсети</h2>
+                    <div class="ui-kit__blockpath">
+                        <p>Компонент: components/socials/socials</p>
+                    </div>
+                </div>
+            </div>
+            <div class="ui-kit__section-content">
+                <div class="container">
+                    <div class="socials"><a class="socials__link" href="#"><svg><use xlink:href="assets/images/icon.svg#icon_vk"></use></svg></a><a class="socials__link" href="#"><svg><use xlink:href="assets/images/icon.svg#icon_youtube"></use></svg></a><a class="socials__link" href="#"><svg><use xlink:href="assets/images/icon.svg#icon_twitter"></use></svg></a><a class="socials__link" href="#"><svg><use xlink:href="assets/images/icon.svg#icon_facebook"></use></svg></a></div>
+                </div>
+            </div>
+        </section>
+        <section class="ui-kit__section">
+            <div class="ui-kit__section-head">
+                <div class="container">
+                    <h2 class="ui-kit__title">Скролл вверх</h2>
+                    <div class="ui-kit__blockpath">
+                        <p>Компонент: components/scroll-top/scroll-top</p>
+                    </div>
+                </div>
+            </div>
+            <div class="ui-kit__section-content">
+                <div class="container"><a class="scroll-top js-anchor" href="#offer"><svg><use xlink:href="assets/images/icon.svg#icon_arrow"></use></svg></a></div>
+            </div>
+        </section>
+        <section class="ui-kit__section">
+            <div class="ui-kit__section-head">
+                <div class="container">
+                    <h2 class="ui-kit__title">Команда</h2>
+                    <div class="ui-kit__blockpath">
+                        <p>Компонент: components/team/team</p>
+                    </div>
+                </div>
+            </div>
+            <div class="ui-kit__section-content">
+                <div class="container">
+                    <div class="team">
+                        <div class="grid">
+                            <div class="grid__col grid__col_xl_3">
+                                <div class="team__item">
+                                    <div class="team__photo-wrapper">
+                                        <div class="team__photo"><img src="assets/images/team/1.jpg" /></div>
+                                    </div>
+                                    <div class="team__content">
+                                        <p class="team__name">Фокин Николай Иванович</p>
+                                        <div class="team__text">
+                                            <p>Главный конструктор</p>
+                                            <p>Начальник СКБ ГТУ</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="grid__col grid__col_xl_3">
+                                <div class="team__item">
+                                    <div class="team__photo-wrapper">
+                                        <div class="team__photo"><img src="assets/images/team/2.jpg" /></div>
+                                    </div>
+                                    <div class="team__content">
+                                        <p class="team__name">Барудкин Виктор Владимирович</p>
+                                        <div class="team__text">
+                                            <p>Главный конструктор проекта ГТЭ-170</p>
+                                            <p>Заместитель начальника СКБ ГТУ</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="grid__col grid__col_xl_3">
+                                <div class="team__item">
+                                    <div class="team__photo-wrapper">
+                                        <div class="team__photo"><img src="assets/images/team/3.jpg" /></div>
+                                    </div>
+                                    <div class="team__content">
+                                        <p class="team__name">Непомнящий Владимир Олегович</p>
+                                        <div class="team__text">
+                                            <p>Главный конструктор проекта ГТЭ-65</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="ui-kit__section">
+            <div class="ui-kit__section-head">
+                <div class="container">
+                    <h2 class="ui-kit__title">Вакансии</h2>
+                    <div class="ui-kit__blockpath">
+                        <p>Компонент: components/vacancices/vacancices</p>
+                    </div>
+                </div>
+            </div>
+            <div class="ui-kit__section-content">
+                <div class="container">
+                    <div class="vacancies">
+                        <h2 class="vacancies__title">Вакансии</h2>
+                        <div class="vacancies__text">
+                            <p>Для реализации проекта газотурбостроения требуются инженеры, конструкторы, технологи и другие специалисты.</p>
+                            <p>Актуальные вакансии размещены на сайте «Силовых машин» в разделе <a href="#">Карьера/Вакансии</a>.</p>
+                        </div><a class="button vacancies__button" href="#">Направить резюме</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="ui-kit__section">
+            <div class="ui-kit__section-head">
+                <div class="container">
+                    <h2 class="ui-kit__title">Компонент contacts</h2>
+                    <div class="ui-kit__blockpath">
+                        <p>Компонент: components/contacts/contacts</p>
+                    </div>
+                    <div class="ui-kit__description">
+                        <p>Описание компонента</p>
+                    </div>
+                </div>
+            </div>
+            <div class="ui-kit__section-content">
+                <div class="container">
+                    <div class="contacts">
+                        <div class="contacts__left">
+                            <h2 class="contacts__title">Контакты</h2>
+                            <div class="contacts__group">
+                                <p class="contacts__subtitle">Фокин Николай Иванович, главный конструктор - Начальник СКБ ГТУ</p>
+                                <div class="contacts__contacts">
+                                    <p>Тел. +7 (812) 326-70-12, +7 (931) 225-58-41</p>
+                                    <p>E-mail <a href="mailto:Fokin_NI@power-m.ru">Fokin_NI@power-m.ru</a></p>
+                                </div>
+                            </div>
+                            <div class="contacts__group">
+                                <p class="contacts__subtitle">Барудкин Виктор Владимирович, главный конструктор проекта ГТЭ-170 - заместитель начальника СКБ ГТУ</p>
+                                <div class="contacts__contacts">
+                                    <p>Тел. +7 (812) 326-77-78, доб. 4-61-10, +7 (931) 225-59-12</p>
+                                    <p>E-mail <a href="mailto:Barudkin_VV@power-m.ru">Barudkin_VV@power-m.ru</a></p>
+                                </div>
+                            </div>
+                            <div class="contacts__group">
+                                <p class="contacts__subtitle">Непомнящий Владимир Олегович, главный конструктор проекта ГТЭ-65</p>
+                                <div class="contacts__contacts">
+                                    <p>Тел. +7 (812) 326-77-78, доб. 4-55-72, +7 (931) 281-41-68</p>
+                                    <p>E-mail <a href="mailto:Nepomnyaschiy_VO@power-m.ru">Nepomnyaschiy_VO@power-m.ru</a></p>
+                                </div>
+                            </div>
+                            <div class="contacts__group">
+                                <p class="contacts__subtitle">Приемная СКБ ГТУ, помощник руководителей</p>
+                                <div class="contacts__contacts">
+                                    <p>Тел. +7 (812) 326-77-78, доб. 4-43-00</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contacts__right">
+                            <div class="contacts__group">
+                                <p class="contacts__subtitle">Контакты HR</p>
+                                <div class="contacts__contacts">
+                                    <!-- p Тел. +7 (812) 346 70 37-->
+                                    <p>E-mail <a href="mailto:recruitment@power-m.ru">recruitment@power-m.ru</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="ui-kit__section">
+            <div class="ui-kit__section-head">
+                <div class="container">
+                    <h2 class="ui-kit__title">Объект</h2>
+                    <div class="ui-kit__blockpath">
+                        <p>Компонент: components/object/object</p>
+                    </div>
+                </div>
+            </div>
+            <div class="ui-kit__section-content">
+                <div class="section section section_dark">
+                    <div class="container">
+                        <div class="object">
+                            <h2 class="object__title">Газовая турбина F-класса ГТЭ-65</h2>
+                            <ul class="tabs object__tabs">
+                                <li class="tabs__tab is-active" data-tab-target="description1">Описание</li>
+                                <li class="tabs__tab" data-tab-target="table1">Технические характеристики</li>
+                                <li class="tabs__tab" data-tab-target="construction1">Конструкция</li>
+                            </ul>
+                            <div class="tabs-content object__wrapper">
+                                <div class="tabs-content__wrapper is-active" data-tab="description1" data-tab-group="object1">
+                                    <div class="object__content">
+                                        <div class="object__left">
+                                            <div class="content-zone content-zone_dark content-zone_object">
+                                                <h3>Оптимальное решение для энергетики</h3>
+                                                <p>Компактная и высокоманевренная газотурбинная установка среднего класса мощности ГТЭ-65.</p>
+                                                <p>Разработана для привода через редуктор электрического генератора с частотой вращения 3000 об/мин в простом или комбинированном цикле, а также как энергетический привод для промышленных устройств (насосов, нагнетателей). Подходит для работы во всех диапазонах нагрузки. Обеспечивает низкий уровень выбросов NOx.</p>
+                                                <p>Серийная поставка с 2024 года</p>
+                                            </div>
+                                        </div>
+                                        <div class="object__right">
+                                            <div class="object__image object__image_1"><img src="assets/images/objects/1/1.png" /></div><a class="object__small-image js-fancybox-dark" href="assets/images/objects/1/3.png"><img src="assets/images/objects/1/small_1.png" /></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tabs-content__wrapper" data-tab="table1" data-tab-group="object1">
+                                    <div class="object__content">
+                                        <div class="object__left">
+                                            <table class="table" cellspacing="0" cellpadding="0">
+                                                <tr class="table__row">
+                                                    <td class="table__col table__col_title">Мощность на клеммах турбогенератора*</td>
+                                                    <td class="table__col table__col_value">67,7 МВт</td>
+                                                </tr>
+                                                <tr class="table__row">
+                                                    <td class="table__col table__col_title">КПД на клеммах турбогенератора*</td>
+                                                    <td class="table__col table__col_value">36,2 %</td>
+                                                </tr>
+                                                <tr class="table__row">
+                                                    <td class="table__col table__col_title">Концентрация оксидов азота в выхлопных газах</td>
+                                                    <td class="table__col table__col_value">50 мг/м3</td>
+                                                </tr>
+                                                <tr class="table__row">
+                                                    <td class="table__col table__col_title">Расход газов на выходе турбины</td>
+                                                    <td class="table__col table__col_value">195 кг/с</td>
+                                                </tr>
+                                                <tr class="table__row">
+                                                    <td class="table__col table__col_title">Температура на выходе турбины</td>
+                                                    <td class="table__col table__col_value">555 °С</td>
+                                                </tr>
+                                                <tr class="table__row">
+                                                    <td class="table__col table__col_title">Частота вращения</td>
+                                                    <td class="table__col table__col_value">5441 об/мин.</td>
+                                                </tr>
+                                                <tr class="table__row">
+                                                    <td class="table__col table__col_title">Полный назначенный ресурс</td>
+                                                    <td class="table__col table__col_value">100000 ЭЧ</td>
+                                                </tr>
+                                                <tr class="table__row">
+                                                    <td class="table__col table__col_title">Межремонтный ресурс</td>
+                                                    <td class="table__col table__col_value">33000 ЭЧ</td>
+                                                </tr>
+                                                <tr class="table__row">
+                                                    <td class="table__col table__col_title">Масса турбогруппы</td>
+                                                    <td class="table__col table__col_value">62,0 т</td>
+                                                </tr>
+                                            </table>
+                                            <p class="object__table-caption">* - данные предоставлены в нормальных условиях по ГОСТ 52200-2004 (tн=+15 °С, рн=0,1013 МПа, относительная влажность 60 %).</p>
+                                        </div>
+                                        <div class="object__right">
+                                            <div class="object__image object__image_1"><img src="assets/images/objects/1/1.png" /></div><a class="object__small-image js-fancybox-dark" href="assets/images/objects/1/3.png"><img src="assets/images/objects/1/small_1.png" /></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tabs-content__wrapper" data-tab="construction1" data-tab-group="object1">
+                                    <div class="object__content">
+                                        <div class="object__left">
+                                            <div class="content-zone content-zone_dark content-zone_object">
+                                                <p>ГТЭ-65 представляет собой одновальную конструкцию с редуктором и состоит из отдельно транспортируемых блоков. Турбогруппа - единый компактный транспортабельный блок, объединяющий компрессор, камеру сгорания и турбину</p>
+                                                <ul>
+                                                    <li>Составной ротор с хиртовым соединением дисков, стянутых одним болтом-стяжкой</li>
+                                                    <li>16-ступенчатый компрессор с легко обслуживаемыми лопатками</li>
+                                                    <li>Три поворотных направляющих аппарата</li>
+                                                    <li>Низкоэмиссионная трубчато-кольцевая камера сгорания</li>
+                                                    <li>4-ступенчатая турбина с охлаждаемыми лопатками на 1-3 ступени</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="object__right">
+                                            <div class="object__image"><img src="assets/images/objects/1/2.png" /></div><a class="object__small-image js-fancybox" href="assets/images/objects/1/4.png"><img src="assets/images/objects/1/small_2.jpg" /></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="assets/scripts/app.min.js"></script>
+    <script src="assets/scripts/main.js"></script>
+</body>
+
+</html>
