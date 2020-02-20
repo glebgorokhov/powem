@@ -1,7 +1,8 @@
 .footer {
   display: block;
-  margin-top: 100px;
-  padding: 0 0 30px;
+
+  @include rule(margin-top, (xl: 100px, sm: 40px));
+  @include rule(padding, (xl: 0 0 30px, sm: 0 0 20px));
 
   $b: &;
 
@@ -15,33 +16,43 @@
     border-style: solid;
     border-top-color: $color-gray-5;
     border-bottom-color: $color-basic;
-    padding: 26px 0;
+    padding: 30px 0;
   }
 
   &__menu {
     display: flex;
-    justify-content: center;
+
+    @include rule(justify-content, (xl: center, sm: flex-start));
+    @include rule(flex-wrap, (sm: wrap));
+    @include rule(margin-top, (sm: -20px));
   }
 
   &__link {
-    font-size: 16px;
     line-height: 19px;
     transition: color $ease-main;
+    box-sizing: border-box;
+
+    @include rule(font-size, (xl: 16px, sm: 14px));
+    @include rule(margin-top, (sm: 20px));
+    @include rule(width, (sm: 50%));
+    @include rule(padding-right, (sm: 20px));
 
     &:hover {
       color: $color-main;
     }
 
     &:not(:first-child) {
-      margin-left: 90px;
+      @include rule(margin-left, (xl: 90px, md: 60px, sm: 0));
     }
   }
 
   &__bottom {
-    margin-top: 49px;
+    @include rule(margin-top, (xl: 49px, sm: 30px));
+    @include rule(height, (xl: 90px, sm: auto));
+    @include rule(flex-direction, (sm: column));
+
     display: flex;
     align-items: center;
-    height: 90px;
     justify-content: space-between;
     position: relative;
   }
@@ -52,7 +63,11 @@
     height: 90px;
     transition: opacity $ease-main;
 
-    @include center-image;
+    @include rule(margin-top, (sm: 30px));
+
+    @include screen('sm', min) {
+      @include center-image;
+    }
 
     &:hover {
       opacity: .5;
@@ -65,6 +80,7 @@
 
   &__button {
     @include rule(margin-right, (xl: 72px, lg: 0));
+    @include rule(display, (sm: none !important));
   }
 
   &__copyright {
@@ -72,6 +88,6 @@
     font-size: 13px;
     line-height: 25px;
     text-align: center;
-    margin-top: 33px;
+    @include rule(margin-top, (xl: 33px, sm: 30px));
   }
 }

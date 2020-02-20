@@ -3,15 +3,17 @@
   background-color: #333;
   background-image: url('../images/offer.jpg');
   background-size: cover;
-  padding: 303px 0 158px;
   color: white;
+
+  @include rule(padding, (xl: 303px 0 158px, sm: 150px 0 30px));
 
   $b: &;
 
   &__title {
     max-width: 960px;
     font-weight: 900;
-    font-size: 50px;
-    line-height: 64px;
+    line-height: (64/50);
+
+    @include rule(font-size, (xl: 50px, sm: 28px));
   }
 }

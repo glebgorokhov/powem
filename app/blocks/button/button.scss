@@ -1,6 +1,5 @@
 .button {
   display: inline-block;
-  padding: 0 68px;
   border: 0;
   vertical-align: middle;
   box-sizing: border-box;
@@ -8,12 +7,14 @@
   transition: background-color $ease-main;
   cursor: pointer;
   font-weight: bold;
-  font-size: 16px;
-  line-height: 64px;
-  height: 64px;
   color: white;
   appearance: none;
   border-radius: 0;
+
+  @include rule(font-size, (xl: 16px, sm: 14px));
+  @include rule(line-height, (xl: 64px, sm: 50px));
+  @include rule(height, (xl: 64px, sm: 50px));
+  @include rule(padding, (xl: 0 68px, sm: 0 30px));
 
   $b: &;
 

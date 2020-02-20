@@ -5,11 +5,12 @@
   overflow: visible;
 
   &:not(:first-child) {
-    margin-top: 80px;
+    @include rule(margin-top, (xl: 80px, sm: 40px));
   }
 
   &__slide {
-    width: 624px !important;
+    @include rule(width, (xl: 624px !important, sm: 100% !important));
+
     text-align: center;
     transition: opacity $ease-main;
     opacity: .4;
@@ -37,11 +38,12 @@
     left: 0;
     right: 0;
     margin: auto;
-    height: 65px;
-    display: flex;
     justify-content: space-between;
     box-sizing: border-box;
     pointer-events: none;
+    height: 65px;
+
+    @include rule(display, (xl: flex, sm: none));
   }
 
   &__button {
@@ -76,13 +78,14 @@
   }
 
   &__caption {
-    margin-top: 22px;
     font-weight: 300;
     font-size: 14px;
-    line-height: 30px;
     color: black;
     transition: opacity $ease-main;
     opacity: 0;
+
+    @include rule(margin-top, (xl: 22px, lg: 20px));
+    @include rule(line-height, (xl: 30px, lg: 24px));
 
     .swiper-slide-active & {
       opacity: 1;

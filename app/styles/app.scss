@@ -11,8 +11,10 @@
 
 .container {
   width: $container-width;
-  padding-left: $container-padding;
-  padding-right: $container-padding;
+
+  @include rule(padding-left, (xl: $container-padding, sm: 20px));
+  @include rule(padding-right, (xl: $container-padding, sm: 20px));
+
   margin-left: auto;
   margin-right: auto;
   max-width: 100%;

@@ -6,23 +6,26 @@
 
   &__title {
     font-weight: 300;
-    font-size: 35px;
-    line-height: 48px;
+    line-height: (48/35);
+
+    @include rule(font-size, (xl: 35px, sm: 28px));
   }
 
   &__tabs {
-    max-width: 745px;
+    @include rule(max-width, (xl: 745px, sm: none));
 
     &:not(:first-child) {
-      margin-top: 40px;
+      @include rule(margin-top, (xl: 40px, sm: 30px));
     }
   }
 
   &__content {
     display: flex;
 
+    @include rule(flex-direction, (sm: column));
+
     .content-zone {
-      max-width: 700px;
+      @include rule(max-width, (xl: 700px, sm: none));
     }
   }
 
@@ -32,20 +35,30 @@
 
   &__right {
     position: relative;
-    width: 495px;
-    margin-left: 40px;
     flex-shrink: 0;
+
+    @include rule(margin-top, (sm: 40px));
+    @include rule(margin-left, (xl: 40px, sm: 0));
+    @include rule(width, (xl: 495px, sm: 100%));
   }
 
   &__image {
+    @include screen('sm') {
+      text-align: center;
+      font-size: 0;
+    }
+
+    img {
+      @include rule(max-width, (sm: 100%));
+    }
 
     &_1 {
-      margin-top: -75px;
+      @include rule(margin-top, (xl: -75px, sm: 0));
     }
 
     &_2 {
-      margin-top: -165px;
-      margin-left: 55px;
+      @include rule(margin-top, (xl: -165px, sm: 0));
+      @include rule(margin-left, (xl: 55px, sm: 0));
 
       & + #{$b}__small-image {
         margin-top: -50px;
@@ -54,7 +67,8 @@
   }
 
   &__small-image {
-    margin-top: 30px;
+    @include rule(margin-top, (xl: 30px, sm: -50px));
+
     margin-left: auto;
     width: 100px;
     height: 100px;
@@ -74,8 +88,9 @@
   }
 
   &__table-caption {
-    margin-top: 40px;
+    @include rule(margin-top, (xl: 40px, sm: 30px));
+    @include rule(line-height, (xl: 1.4, sm: 1.8));
+
     font-size: 11px;
-    line-height: 1.4;
   }
 }

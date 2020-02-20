@@ -1,10 +1,10 @@
 .two-columns {
-  display: flex;
+  @include rule(display, (xl: flex, sm: block));
 
   $b: &;
 
   &:not(:first-child) {
-    margin-top: 60px;
+    @include rule(margin-top, (xl: 60px, sm: 30px));
   }
 
   &__left {
@@ -12,12 +12,14 @@
   }
 
   &__right {
-    margin-left: 67px;
-    width: 370px;
-    padding-top: 39px;
+    @include rule(margin-left, (xl: 67px, sm: 0));
+    @include rule(width, (xl: 370px, sm: auto));
+    @include rule(padding-top, (xl: 39px, sm: 0));
+    @include rule(margin-top, (sm: 40px));
 
     #{$b}_equal & {
-      margin-left: 79px;
+      @include rule(margin-left, (xl: 79px, sm: 0));
+
       width: auto;
       flex: 1;
       padding-top: 0;

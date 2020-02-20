@@ -1,5 +1,6 @@
 .content-zone {
-  font-size: 17px;
+  @include rule(font-size, (xl: 17px, sm: 14px));
+
   line-height: (34/17);
 
   $b: &;
@@ -7,24 +8,25 @@
   h1, h2, h3, h4, h5, h6 {
 
     &:not(:first-child) {
-      margin-top: 38px;
+      @include rule(margin-top, (xl: 38px, sm: 40px));
     }
 
     &:not(:last-child) {
-      margin-bottom: 38px;
+      @include rule(margin-bottom, (xl: 38px, sm: 30px));
     }
   }
 
   h1, h2, h3, h4, h5, h6 {
+    @include rule(font-size, (xl: 25px, sm: 21px));
+
     font-weight: 300;
-    font-size: 25px;
     line-height: (35/25);
   }
 
   p {
 
     &:not(:first-child) {
-      margin-top: 34px;
+      @include rule(margin-top, (xl: 34px, sm: 20px));
     }
   }
 
@@ -64,29 +66,42 @@
     border-width: 1px 0;
     border-style: solid;
     border-color: $color-gray-5;
-    padding: 48px 0;
     text-align: center;
     display: block;
-    font-size: 19px;
     line-height: (33/19);
     font-weight: 900;
 
+    @include rule(font-size, (xl: 19px, sm: 16px));
+    @include rule(padding, (xl: 48px 0, sm: 20px 0));
+
     &:not(:first-child) {
-      margin-top: 40px;
+      @include rule(margin-top, (xl: 40px, sm: 30px));
     }
 
     &:not(:last-child) {
-      margin-bottom: 48px;
+      @include rule(margin-bottom, (xl: 48px, sm: 30px));
     }
   }
 
   img {
-    width: 327px;
-    float: left;
-    margin: 0 31px 22px 0;
+    @include rule(width, (xl: 327px, sm: auto));
+    @include rule(max-width, (sm: 100%));
+    @include rule(float, (xl: left, sm: none));
+    @include rule(margin, (xl: 0 31px 22px 0, sm: 0));
+    @include rule(display, (sm: block));
+
+    &:not(:first-child) {
+      @include rule(margin-top, (sm: 30px));
+    }
+
+    &:not(:last-child) {
+      @include rule(margin-bottom, (sm: 30px));
+    }
 
     & + p {
-      margin-top: 0 !important;
+      @include screen('sm', min) {
+        margin-top: 0 !important;
+      }
     }
   }
 
@@ -100,19 +115,20 @@
   ul, ol {
 
     &:not(:first-child) {
-      margin-top: 48px;
+      @include rule(margin-top, (xl: 48px, sm: 30px));
     }
 
     &:not(:last-child) {
-      margin-bottom: 48px;
+      @include rule(margin-bottom, (xl: 48px, sm: 30px));
     }
 
     li {
-      padding-left: 30px;
+      @include rule(padding-left, (xl: 30px, sm: 20px));
+
       position: relative;
 
       &:not(:first-child) {
-        margin-top: 38px;
+        @include rule(margin-top, (xl: 38px, sm: 20px));
       }
     }
   }
@@ -122,9 +138,10 @@
     li {
 
       &::before {
+        @include rule(top, (xl: 16px, sm: 11px));
+
         position: absolute;
         left: 0;
-        top: 16px;
         content: '';
         width: 4px;
         height: 4px;
@@ -157,26 +174,27 @@
     img {
       float: none;
       display: block;
-      margin: 0 auto;
+      margin: 0 auto !important;
       width: auto;
       max-width: 100%;
     }
 
     figcaption {
       display: block;
-      margin-top: 30px;
       font-weight: 300;
       font-size: 14px;
-      line-height: 30px;
       color: black;
+      line-height: 2;
+
+      @include rule(margin-top, (xl: 30px, sm: 20px));
     }
 
     &:not(:first-child) {
-      margin-top: 70px;
+      @include rule(margin-top, (xl: 70px, sm: 30px));
     }
 
     &:not(:last-child) {
-      margin-bottom: 70px;
+      @include rule(margin-bottom, (xl: 70px, sm: 30px));
     }
   }
 
@@ -186,27 +204,30 @@
 
     h2 {
       font-weight: 300;
-      font-size: 41px;
       line-height: 1.2;
+
+      @include rule(font-size, (xl: 41px, sm: 30px));
     }
 
     strong {
-      font-size: 20px;
+      @include rule(font-size, (xl: 20px, sm: 16px));
+
       color: $color-basic;
       font-weight: 400;
     }
 
     h3 {
-      font-size: 24px;
+      @include rule(font-size, (xl: 24px, sm: 20px));
+
       line-height: (34/24);
       font-weight: 400;
 
       &:not(:first-child) {
-        margin-top: 65px;
+        @include rule(margin-top, (xl: 65px, sm: 40px));
       }
 
       &:not(:last-child) {
-        margin-bottom: 40px;
+        @include rule(margin-bottom, (xl: 40px, sm: 30px));
       }
     }
   }
@@ -214,8 +235,9 @@
   &_object {
 
     h3 {
-      font-size: 22px;
-      line-height: 36px;
+      @include rule(font-size, (xl: 22px, sm: 20px));
+
+      line-height: (36/22);
       font-weight: 400;
 
       &:not(:first-child) {
@@ -223,7 +245,7 @@
       }
 
       &:not(:last-child) {
-        margin-bottom: 40px;
+        @include rule(margin-bottom, (xl: 40px, sm: 30px));
       }
     }
   }
@@ -238,7 +260,7 @@
     ul, ol {
 
       li {
-        padding-left: 40px;
+        @include rule(padding-left, (xl: 40px, sm: 20px));
       }
     }
 

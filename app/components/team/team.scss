@@ -8,7 +8,7 @@
   }
 
   &__photo-wrapper {
-    max-width: 267px;
+    @include rule(max-width, (xl: 267px, sm: 150px));
   }
 
   &__photo {
@@ -25,24 +25,27 @@
   &__content {
 
     &:not(:first-child) {
-      margin-top: 23px;
+      @include rule(margin-top, (xl: 23px, sm: 20px));
     }
   }
 
   &__name {
     font-weight: 500;
     font-size: 15px;
-    line-height: 2;
+
+    @include rule(line-height, (xl: 2, sm: 1.5));
   }
 
   &__text {
     font-weight: 300;
-    font-size: 15px;
-    line-height: (28/15);
+
+    @include rule(font-size, (xl: 15px, sm: 14px));
+    @include rule(line-height, (xl: (28/15), sm: (20/14)));
     color: $color-gray-3;
 
+
     &:not(:first-child) {
-      margin-top: 14px;
+      @include rule(margin-top, (xl: 14px, sm: 10px));
     }
 
     a {

@@ -1,19 +1,22 @@
 .vacancies {
   display: block;
-  padding: 83px 100px 82px;
   border: 1px solid rgba(1, 138, 166, .34);
-  margin: 0 -100px;
+
+  @include rule(margin, (xl: 0 -100px, sm: 0));
+  @include rule(padding, (xl: 83px 100px 82px, sm: 30px));
 
   $b: &;
 
   &__title {
+    @include rule(font-size, (xl: 41px, sm: 28px));
+
     font-weight: 300;
-    font-size: 41px;
     line-height: 1.2;
   }
 
   &__text {
-    font-size: 22px;
+    @include rule(font-size, (xl: 22px, sm: 14px));
+
     line-height: (43/22);
 
     a {
@@ -25,14 +28,14 @@
     }
 
     &:not(:first-child) {
-      margin-top: 38px;
+      @include rule(margin-top, (xl: 38px, sm: 20px));
     }
   }
 
   &__button {
 
     &:not(:first-child) {
-      margin-top: 80px;
+      @include rule(margin-top, (xl: 80px, sm: 30px));
     }
   }
 }

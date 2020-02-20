@@ -3,17 +3,33 @@
   font-size: 0;
   border-bottom: 1px solid rgba(130, 130, 130, .69);
 
+  @include screen('sm') {
+    white-space: nowrap;
+    overflow: auto;
+    padding: 0 20px;
+    margin-left: -20px;
+    margin-right: -20px;
+
+    &::after {
+      content: '';
+      width: 20px;
+      height: 1px;
+      flex-shrink: 0;
+    }
+  }
+
   &__tab {
     border-bottom: 2px solid transparent;
     transition: border-color $ease-main;
     cursor: pointer;
-    font-size: 15px;
-    line-height: 28px;
-    margin-bottom: -2px;
-    padding: 0 0 18px;
+    @include rule(font-size, (xl: 15px, sm: 14px));
+    @include rule(line-height, (xl: 28px, sm: 20px));
+    @include rule(padding, (xl: 0 0 18px, sm: 0 0 16px));
+
+    @include rule(margin-bottom, (xl: -2px, sm: 0));
 
     &:not(:first-child) {
-      margin-left: 73px;
+      @include rule(margin-left, (xl: 73px, sm: 30px));
     }
 
     &.is-active {
@@ -22,7 +38,9 @@
     }
   }
 
-  & + &-content { margin-top: 75px; }
+  & + &-content {
+    @include rule(margin-top, (xl: 75px, sm: 30px));
+  }
 
   &-content {
 

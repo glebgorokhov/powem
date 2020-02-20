@@ -23,6 +23,11 @@ export function slider() {
         nextEl: block.find('.slider__button_next'),
         prevEl: block.find('.slider__button_prev'),
       },
+      breakpoints: {
+        1024: {
+          spaceBetween: 10,
+        },
+      },
     });
   });
 }

@@ -1,29 +1,33 @@
 .contacts {
-  display: flex;
+  @include rule(display, (xl: flex, sm: block));
+  @include rule(margin, (xl: 0 -100px, sm: 0 -20px));
+
   background: $color-blue;
-  margin: 0 -100px;
 
   $b: &;
 
   &__left {
     background: $color-grey-3;
-    padding: 80px 100px 105px;
     flex: 1;
+
+    @include rule(padding, (xl: 80px 100px 105px, sm: 30px 20px));
   }
 
   &__right {
     box-sizing: border-box;
     width: 583px;
     flex-shrink: 0;
-    padding: 184px 140px 105px;
     color: white;
+
+    @include rule(padding, (xl: 184px 140px 105px, sm: 30px 20px));
   }
 
   &__title {
+    @include rule(font-size, (xl: 41px, sm: 28px));
+    @include rule(margin-bottom, (xl: 55px, sm: 30px));
+
     font-weight: 300;
-    font-size: 41px;
     line-height: 1.2;
-    margin-bottom: 55px;
   }
 
   &__group {
@@ -35,13 +39,14 @@
 
   &__subtitle {
     font-weight: bold;
-    font-size: 22px;
-    line-height: 1.2;
+
+    @include rule(font-size, (xl: 22px, sm: 16px));
+    @include rule(line-height, (xl: 1.2, sm: 1.7));
   }
 
   &__contacts {
-    font-size: 18px;
-    line-height: 1.2;
+    @include rule(font-size, (xl: 18px, sm: 14px));
+    @include rule(line-height, (xl: 1.2, sm: 1.6));
 
     a {
       color: $color-blue;
@@ -59,13 +64,13 @@
     }
 
     &:not(:first-child) {
-      margin-top: 52px;
+      @include rule(margin-top, (xl: 52px, sm: 20px));
     }
 
     p {
 
       &:not(:first-child) {
-        margin-top: 26px;
+        @include rule(margin-top, (xl: 26px, sm: 20px));
       }
     }
   }

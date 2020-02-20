@@ -2,12 +2,13 @@
   display: block;
 
   &:not(:first-child) {
-    margin-top: 81px;
+    @include rule(margin-top, (xl: 81px, sm: 40px));
   }
 
   &_dark {
     background: $color-dark-3;
-    padding: 75px 0;
+
+    @include rule(padding, (xl: 75px 0, sm: 40px 0));
 
     &_blue {
       background: $color-blue-dark;
@@ -26,23 +27,25 @@
 
   &__title {
     font-weight: 300;
-    font-size: 41px;
     line-height: 1.2;
+
+    @include rule(font-size, (xl: 41px, sm: 28px));
   }
 
   &__content {
 
     &:not(:first-child) {
-      margin-top: 38px;
+      @include rule(margin-top, (xl: 38px, sm: 24px));
     }
   }
 
   &__description {
-    font-size: 20px;
+    @include rule(font-size, (xl: 20px, sm: 16px));
+
     line-height: 1.99;
 
     &_about + .content-zone {
-      margin-top: 33px;
+      @include rule(margin-top, (xl: 33px, sm: 30px));
     }
 
     &_width {

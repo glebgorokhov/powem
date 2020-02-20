@@ -1,7 +1,9 @@
 .table {
   display: table;
-  font-size: 13px;
-  line-height: 1.4;
+
+  @include rule(font-size, (xl: 13px, sm: 12px));
+  @include rule(line-height, (xl: 1.4, sm: 1.8));
+
   width: 100%;
   table-layout: auto;
 
@@ -13,7 +15,8 @@
   }
 
   &__col {
-    padding: 22px 0;
+    @include rule(padding, (xl: 22px 0, sm: 20px 0));
+
     vertical-align: top;
     border-bottom: 1px solid rgba(130, 130, 130, .12);
 
@@ -31,7 +34,8 @@
 
     &_value {
       font-weight: 700;
-      width: 240px;
+
+      @include rule(width, (xl: 240px, md: auto));
 
       &_small {
         width: auto;

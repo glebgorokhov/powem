@@ -4,7 +4,8 @@
   $b: &;
 
   &__item {
-    min-height: 198px;
+    @include rule(min-height, (xl: 198px, sm: 0));
+
     background: $color-grey-1;
     position: relative;
     transition: background $ease-main, box-shadow $ease-main;
@@ -32,7 +33,7 @@
     }
 
     &:not(:first-child) {
-      margin-top: 40px;
+      @include rule(margin-top, (xl: 40px, sm: 30px));
     }
   }
 

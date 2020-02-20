@@ -1,21 +1,24 @@
 .header {
+  @include rule(position, (xl: fixed, sm: absolute));
+  @include rule(padding, (xl: 30px 0, sm: 20px 0));
+
   display: block;
-  position: fixed;
   left: 0;
   top: 0;
   right: 0;
   z-index: 50;
-  padding: 30px 0;
   transition: background $ease-main, box-shadow $ease-main, padding $ease-main, color $ease-main;
   color: white;
 
   $b: &;
 
   &.is-fixed {
-    color: $color-basic;
-    padding: 0;
-    background: white;
-    box-shadow: 0 9px 10px rgba(black, .03);
+    @include screen('sm', min) {
+      color: $color-basic;
+      padding: 0;
+      background: white;
+      box-shadow: 0 9px 10px rgba(black, .03);
+    }
   }
 
   .container {
@@ -26,11 +29,14 @@
 
   &__logo {
     font-size: 0;
-    width: 90px;
     transition: opacity $ease-main, width $ease-main;
 
+    @include rule(width, (xl: 90px, sm: 60px));
+
     #{$b}.is-fixed & {
-      width: 70px;
+      @include screen('sm', min) {
+        width: 70px;
+      }
     }
 
     &:hover {
@@ -43,7 +49,8 @@
   }
 
   &__menu {
-    display: flex;
+    @include rule(display, (xl: flex, sm: none));
+
     align-items: center;
   }
 
@@ -57,7 +64,7 @@
     }
 
     &:not(:first-child) {
-      margin-left: 72px;
+      @include rule(margin-left, (xl: 72px, md: 48px));
     }
   }
 }

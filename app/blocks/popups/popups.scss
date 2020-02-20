@@ -13,16 +13,17 @@
 }
 
 .fancybox-slide--html, .fancybox-slide {
-  padding: 67px 220px;
+  @include rule(padding, (xl: 67px 220px, md: 190px 70px, sm: 90px 0));
 }
 
 .popup {
-  padding: 120px 0;
+  @include rule(padding, (xl: 120px 0, sm: 90px 0 30px));
+
   width: 100%;
   min-height: 100%;
 
   .container {
-    max-width: 902px;
+    width: 902px;
   }
 }
 
@@ -35,16 +36,23 @@
 }
 
 .fancybox-toolbar {
-  top: 70px;
-  right: 86px;
+  @include rule(top, (xl: 70px, sm: 20px));
+  @include rule(right, (xl: 86px, sm: 20px));
+
+  .fancybox-is-open & {
+    opacity: 1;
+    visibility: visible;
+  }
 }
 
 .fancybox-button {
   background: transparent;
   border: 1px solid $color-gray-5;
   border-radius: 0;
-  width: 70px;
-  height: 70px;
+
+  @include rule(width, (xl: 70px, sm: 50px));
+  @include rule(height, (xl: 70px, sm: 50px));
+
   box-sizing: border-box;
   position: relative;
   fill: $color-basic;
