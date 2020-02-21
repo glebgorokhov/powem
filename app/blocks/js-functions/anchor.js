@@ -11,9 +11,11 @@ export default function anchor() {
       zeroOffset = target.hasClass('section_dark') || target.hasClass('offer') || target.hasClass('vacancies') || target.hasClass('contacts');
 
     if (target.length > 0) {
-      $('body, html').stop().animate({
-        scrollTop: target.offset().top - 70 - (zeroOffset ? 0 : 81),
-      }, 1000, 'swing');
+      setTimeout(() => {
+        $('body, html').stop().animate({
+          scrollTop: target.offset().top - ($(window).width() > globalOptions.sizes.sm ? 70 : 39) - (zeroOffset ? 0 : ($(window).width() > globalOptions.sizes.sm ? 81 : 40)),
+        }, 1000, 'swing');
+      }, 1);
     }
   });
 }

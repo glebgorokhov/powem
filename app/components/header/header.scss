@@ -1,5 +1,6 @@
 .header {
-  @include rule(position, (xl: fixed, sm: absolute));
+  position: fixed;
+
   @include rule(padding, (xl: 30px 0, sm: 20px 0));
 
   display: block;
@@ -13,12 +14,19 @@
   $b: &;
 
   &.is-fixed {
-    @include screen('sm', min) {
-      color: $color-basic;
-      padding: 0;
-      background: white;
-      box-shadow: 0 9px 10px rgba(black, .03);
+    color: $color-basic;
+    padding: 0;
+    background: white;
+    box-shadow: 0 9px 10px rgba(black, .03);
+
+    &.has-burger-opened {
+      padding: 20px 0;
     }
+  }
+
+  &.has-burger-opened {
+    background: white;
+    color: $color-basic;
   }
 
   .container {
@@ -34,9 +42,11 @@
     @include rule(width, (xl: 90px, sm: 60px));
 
     #{$b}.is-fixed & {
-      @include screen('sm', min) {
-        width: 70px;
-      }
+      @include rule(width, (xl: 70px, sm: 40px));
+    }
+
+    #{$b}.has-burger-opened & {
+      width: 60px;
     }
 
     &:hover {
@@ -52,6 +62,28 @@
     @include rule(display, (xl: flex, sm: none));
 
     align-items: center;
+
+    @include screen('sm', min) {
+      display: flex !important;
+    }
+
+    @include screen('sm') {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: white;
+      top: 100px;
+      box-sizing: border-box;
+      padding: 10px 20px 20px;
+      overflow: auto;
+      opacity: 0;
+      transition: opacity $ease-main;
+
+      &.is-active {
+        opacity: 1;
+      }
+    }
   }
 
   &__link {
@@ -59,12 +91,61 @@
     line-height: 19px;
     transition: opacity $ease-main;
 
+    @include rule(display, (sm: block));
+
     &:hover {
       opacity: .5;
     }
 
     &:not(:first-child) {
-      @include rule(margin-left, (xl: 72px, md: 48px));
+      @include rule(margin-left, (xl: 72px, md: 48px, sm: 0));
+      @include rule(margin-top, (sm: 20px));
+    }
+  }
+
+  &__burger {
+    @include rule(display, (xl: none, sm: flex));
+
+    width: 20px;
+    height: 14px;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: transform $ease-main;
+
+    &::before, &::after {
+      content: '';
+    }
+
+    span, &::before, &::after {
+      background: white;
+      height: 2px;
+      width: 100%;
+      border-radius: 50px;
+      transition: transform $ease-main, opacity $ease-main, background $ease-main;
+      transform-origin: center;
+    }
+
+    #{$b}.is-fixed &, #{$b}.has-burger-opened & {
+      span, &::before, &::after {
+        background: $color-basic;
+      }
+    }
+
+    #{$b}.has-burger-opened & {
+      transform: translate3d(6px, 0, 0);
+      &::before {
+        transform: rotate(45deg) translate3d(0, 9px, 0);
+      }
+
+      &::after {
+        transform: rotate(-45deg) translate3d(0, -9px, 0);
+      }
+
+      span {
+        opacity: 0;
+        transform: translate3d(0, -10px, 0);
+      }
     }
   }
 }

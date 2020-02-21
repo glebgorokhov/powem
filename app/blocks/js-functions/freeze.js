@@ -16,6 +16,8 @@ export function freeze() {
       position: 'fixed',
       top: -top,
     });
+
+    h.addClass('is-fixed');
   }
 }
 
@@ -32,6 +34,8 @@ export function unfreeze() {
       top: '',
       'overflow-y': '',
     });
+
+    h.removeClass('is-fixed');
   }
 }
 

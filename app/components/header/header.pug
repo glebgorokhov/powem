@@ -4,9 +4,12 @@ mixin header()
       +e.A.logo(href="http://www.power-m.ru/" target="_blank")
         img(src="assets/images/logo.svg")
 
-      +e.menu
+      +e.menu.js-burger-menu
         each item in getData('header').menu
           +e.A.link(href=item.link).js-anchor!= item.text
+
+      +e.burger.js-burger-button
+        span
 
 
 mixin ui-kit-header()
