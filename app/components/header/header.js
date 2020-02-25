@@ -31,7 +31,9 @@ export function closeBurger() {
 
 export function burgerMenu() {
   $(document).on('click', '.js-burger-button, .header__link', function () {
-    burger.hasClass('is-active') ? closeBurger() : showBurger();
+    if ($(window).width() < globalOptions.sizes.sm) {
+      burger.hasClass('is-active') ? closeBurger() : showBurger();
+    }
   });
 
   $(window).resize(function () {
