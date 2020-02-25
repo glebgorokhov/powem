@@ -6,7 +6,7 @@ import {freeze, unfreeze} from "../../blocks/js-functions/freeze";
 const
   burger = $(document).find('.js-burger-menu'),
   burgerButton = $(document).find('.js-burger-button'),
-  headerBlock = $('.header');
+  headerBlock = $(document).find('.header');
 
 export function showBurger() {
   freeze();
